@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+:root {
+  --styled-cta-bg: #000000;
+  --styled-cta-fg: #ffffff;
+  --styled-cta-highlight: blue;
+  --styled-cta-highlight-subtle: #8484ff;
+  --gradient-angle: 0deg;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #02040c;
+  font-family: "Inter", sans-serif;
+}
+
+.styled-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  border: 2px solid transparent;
+  border-radius: 360px;
+  color: var(--styled-cta-fg);
+  background: linear-gradient(var(--styled-cta-bg), var(--styled-cta-bg)) padding-box,
+    conic-gradient(
+      from var(--gradient-angle),
+      transparent,
+      var(--styled-cta-highlight) 20%,
+      var(--styled-cta-highlight-subtle) 40%,
+      var(--styled-cta-highlight) 60%,
+      transparent 80%
+    ) border-box;
+  box-shadow: inset 0 0 0 1px var(--styled-cta-highlight-subtle);
+  transition: 0.3s ease-in-out;
+}
+
+.styled-cta:hover {
+  animation: rotate-gradient 3s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.styled-cta span {
+  position: relative;
+  z-index: 1;
+}
